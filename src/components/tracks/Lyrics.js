@@ -26,7 +26,6 @@ class Lyrics extends Component {
 
   render() {
       const { track, lyrics} = this.state;
-      
       if (track === undefined || lyrics === undefined || Object.keys(track).length === 0 || Object.keys(lyrics).length === 0) {
           return <Spinner />
       } else {
@@ -47,7 +46,7 @@ class Lyrics extends Component {
                         <strong>Album ID </strong>: {track.album_id}
                       </li>
                       <li className="list-group-item">
-                          <strong>Song Genres </strong>: {track.primary_genres.music_genre_list[0].length === 0 ? <p>No Genre</p> : track.primary_genres.music_genre_list[0].music_genre.music_genre_name }
+                          <strong>Song Genres </strong>: {track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
                       </li>
                       <li className="list-group-item">
                           <strong>Explicit </strong>: {track.explicit === 0 ? 'No' : 'Yes'}
